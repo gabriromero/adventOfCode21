@@ -6,7 +6,7 @@ public class part1
     public static void main(String[] args) throws Exception
     {
         // pass the path to the file as a parameter
-        File file = new File("src//input.txt");
+        File file = new File("dayOne//src//input.txt");
         Scanner sc = new Scanner(file);
 
         int counter = 0, nextValue = 0;

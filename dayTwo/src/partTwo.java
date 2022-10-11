@@ -5,7 +5,7 @@ public class partTwo {
     public static void main(String[] args) throws Exception
     {
         // pass the path to the file as a parameter
-        File file = new File("src//input.txt");
+        File file = new File("dayTwo//src//input.txt");
         Scanner sc = new Scanner(file);
 
         String direction;

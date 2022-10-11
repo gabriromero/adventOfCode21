@@ -23,7 +23,7 @@ public class partTwo {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        File file = new File("src//input.txt");
+        File file = new File("dayThree//src//input.txt");
         Scanner sc = new Scanner(file);
 
         List<String> oxigenAllValues = new ArrayList<String>();

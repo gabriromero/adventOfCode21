@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class partOne {
     public static void main(String[] args) throws FileNotFoundException {
 
-        File file = new File("src//input.txt");
+        File file = new File("dayThree//src//input.txt");
         Scanner sc = new Scanner(file);
 
         String actualValue = sc.nextLine();
