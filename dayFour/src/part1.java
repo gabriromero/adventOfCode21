@@ -12,22 +12,21 @@ public class part1 {
     }
 
     public static List<Integer> parseBingoNumbers(String numbers) {
+        numbers+=',';
         List<Integer> bingoNumbers = new LinkedList<>();
-        Integer sum = Character.getNumericValue(numbers.charAt(0))*10;
 
-        for(int i = 1; i<numbers.length();i++){
-            char cprev = numbers.charAt(i-1), c = numbers.charAt(i);
-
-            if(c == ',') {
+        Integer sum = 0;
+        for (int i = 0; i < numbers.length()-1; i++) {
+            char actual = numbers.charAt(i), next = numbers.charAt(i+1);
+            if(actual!=',' && next !=',')
+                sum+= Character.getNumericValue(actual) * 10;
+            else if(actual!=',' && next == ',')
+                sum+= Character.getNumericValue(actual);
+            else {
                 bingoNumbers.add(sum);
                 sum=0;
             }
-            else if(cprev!=',')
-                sum+= Character.getNumericValue(c);
-            else
-                sum+= Character.getNumericValue(c)*10;
         }
-
         bingoNumbers.add(sum);
 
         return bingoNumbers;
