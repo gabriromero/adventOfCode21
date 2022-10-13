@@ -43,7 +43,7 @@ public class part2 {
                 board.add(boardEntry);
 
             }
-            boards.add(board);
+            boards.add(Pair.of(board,false));
         }
     }
 
@@ -106,14 +106,23 @@ public class part2 {
 
         readBoards(boards,sc);
 
+        Integer winCount = 0;
         for(Integer n : bingoNumbers){
             for(Map.Entry<List<List<Map.Entry<Integer,Boolean>>>,Boolean> board: boards){
                 markBoard(board.getKey(),n);
-                if(checkWin(board.getKey())>0)
-                    System.out.println(checkWin(board.getKey()) * n);
+                if(checkWin(board.getKey())>0 && !board.getValue()){
+                    board.setValue(true);
+                    winCount++;
+                    if(winCount.equals(100))
+                        System.out.println(checkWin(board.getKey())* n );
+                }
+
             }
         }
 
     }
+
+
+
 
 }
